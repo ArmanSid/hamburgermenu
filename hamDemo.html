@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #menu{
+            z-index: 400;
+        }
+        .container{
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           height: 90Vh;
+       }
+       .ham{
+           position:fixed;
+           left: 0;
+           top: 0;
+           z-index: 2;
+           height: 50px;
+           width: 50px;
+           background:url("ham.png");
+           background-size:100%;
+       }
+       .ham-close{
+        
+        position:fixed;
+        top: 0;
+        left: 0;
+        height: 50px;
+        width: 50px;
+        background:url('ham_close.jpg');
+        background-size: 100%;
+
+       }
+.mynav{
+display: none;
+}
+       
+.shownav{
+
+    /* show the menu */
+    display: block;
+    position:absolute;
+    top:0;
+    right: 0;
+    background: black;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+}
+       
+       ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menuLink{
+    display: block;
+    color:white;
+    text-align: center;
+
+    font-size: 3em;
+    padding: 1em;
+
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+    color: red;
+}
+    </style>
+    <title>ham Demo</title>
+</head>
+<body>
+    <div class="ham" id="menu" onclick="togglemenu()"></div>
+    <nav class="mynav">
+        <ul><li><a href="" class="menuLink">LINK1</a></li>
+        <li><a href="" class="menuLink">LINK2</a></li>
+        <li><a href="" class="menuLink">LINK3</a></li>
+        <li><a href="" class="menuLink">LINK4</a></li></ul>
+    </nav>
+    <div class="container">
+        <h1>Hamburger Menu</h1>
+        <h3>Click on the Hamburger Menu icon to open it </h3>
+    </div>
+    <script>
+        // Ham =document.querySelector('.ham');
+        
+        // Show = document.querySelector()
+        function togglemenu(){
+            
+            const MyNav =document.querySelector('nav');
+            const Menu = document.querySelector("#menu");
+            Menu.classList.toggle("ham");
+            Menu.classList.toggle("ham-close");
+            MyNav.classList.toggle("mynav");
+            MyNav.classList.toggle("shownav"); 
+        }
+    </script>
+</body>
+</html>
